@@ -17,8 +17,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="de">
-      <body className={`${inter.className} antialiased bg-zinc-50`}>
-        {children}
+      <body className={`${inter.className} antialiased text-white min-h-screen`}>
+        {/* Animated gradient mesh background */}
+        <div className="gradient-mesh" aria-hidden="true">
+          <div className="gradient-orb-1" />
+          <div className="gradient-orb-2" />
+        </div>
+
+        {/* Page content above the gradient */}
+        <div className="relative z-10">
+          {children}
+        </div>
       </body>
     </html>
   );
